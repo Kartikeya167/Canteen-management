@@ -1,0 +1,77 @@
+.CrouselP1{
+  height: 37vh;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 2px solid #f6f6f6;
+  border-radius: 10px;
+  background-color: white !important;
+}
+.CrouselP2{
+  height: 37vh;
+  background-color: white !important;
+}
+
+.profile > img{
+  margin-top: -2%;
+  width: 8%;
+}
+
+
+.CrouselP3{
+  height: 37vh;
+  background-color: white !important;
+}
+.profile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.carousel-control-prev-icon ,.carousel-control-next-icon{
+  background-color: #f48e28 !important;
+  border-radius: 20px !important;
+}
+.carousel-control-next-icon{
+margin-left: 64%;
+margin-top:-82%
+}
+.carousel-control-prev-icon{
+  margin-right: 64%;
+  margin-top:-82%
+}
+
+.crouseldiv{
+  width:60%
+}
+.texxt{
+  margin-top:6%;
+  font-size:96%
+
+}
+
+.texxtt{
+  margin-top:-6%;
+}
+
+@media only screen and (max-width: 768px)
+{
+.crouseldiv{
+  margin:20px;
+  width:100% !important;
+}
+
+.texxt{
+  font-size: 86%;
+  padding:2px
+}
+
+
+}
+
+/* @media only screen and (max-width: 600px) {
+.carousel{
+  margin-left: 153px;
+ 
+}
+} */
