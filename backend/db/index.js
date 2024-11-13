@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 mongoose.connect(
-  "mongodb+srv://jainamb:jainamBagrecha@cluster0.h5mn9fs.mongodb.net/canteen-management-system"
+  "mongodb+srv://kartikeya:kartikeya121212@cluster0.h5mn9fs.mongodb.net/canteen-management-system"
 );
 
 // const itemSchema = new mongoose.Schema({
