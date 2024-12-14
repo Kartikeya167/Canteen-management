@@ -1,22 +1,20 @@
 const mongoose = require("mongoose");
-const {config} =require("dotenv")
-config({path:"./config/config.env"})
-mongoose.connect(process.env.DB_URL);
- 
+const { config } = require("dotenv");
 
-const orderSchema = new mongoose.Schema({
-  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-  items: [{
-    itemId: { type: mongoose.Schema.Types.ObjectId, ref: 'MenuItem', required: true },
-    quantity: { type: Number, required: true   },
-    
-    price: { type: Number, required: true }
-  }],
-  totalPrice: { type: Number, required: true }
-});
+// Load environment variables for local testing
+config({ path: "./config/config.env" });
 
+const DB_URL = process.env.DB_URL;
 
-const Cart=mongoose.model('Cart', orderSchema);
-module.exports = {
-  Cart
+// Check if DB_URL exists
+if (!DB_URL) {
+  console.error("Error: DB_URL is not defined in environment variables");
+  process.exit(1); // Exit process if DB_URL is missing
 }
+
+mongoose.connect(DB_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+.then(() => console.log("MongoDB connected successfully"))
+.catch((err) => console.error("MongoDB connection error:", err));
